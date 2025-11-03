@@ -1,0 +1,46 @@
+# Komodachi Project Rules
+
+## Tech Stack
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- PostgreSQL
+- ElevenLabs Conversational AI
+
+## Code Style
+- Use functional components with hooks
+- Prefer server components unless interactivity is needed
+- Use 'use client' directive when necessary
+- Follow TypeScript strict mode
+- Use Tailwind classes for styling
+
+## File Structure
+- `/app` - Next.js app router pages and layouts
+- `/components` - Reusable React components
+- `/lib` - Utility functions and shared code
+- `/prisma` - Database schema and migrations
+
+## Color Palette
+- Primary: #0378A6
+- Primary Light: #6AB9D9
+- Accent: #F2B705
+- Accent Dark: #D9910B
+- Accent Darker: #BF7D2C
+
+## API Routes
+- Follow RESTful conventions
+- Use proper HTTP methods
+- Return consistent JSON responses
+- Handle errors gracefully
+
+## Database
+- Use Prisma for all database operations
+- Follow the schema in prisma/schema.prisma
+- Use transactions for complex operations
+
+## ElevenLabs Integration
+- All voice AI logic in lib/elevenlabs-config.ts
+- Webhook handlers in app/api/elevenlabs/
+- System prompts in Indonesian language
+

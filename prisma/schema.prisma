@@ -1,0 +1,80 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model PTFormation {
+  id                String        @id @default(cuid())
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  status            FormationStatus @default(PENDING)
+  
+  // Company Information
+  companyName       String
+  businessActivities String
+  companyAddress    String
+  registeredCapital Float
+  
+  // Contact Information
+  contactPhone      String
+  contactEmail      String
+  
+  // Appointment
+  preferredDate     DateTime?
+  appointmentNotes  String?
+  
+  // Call Information
+  callId            String?       @unique
+  callDuration      Int?          // in seconds
+  recordingUrl      String?
+  transcript        String?       @db.Text
+  
+  // Shareholders
+  shareholders      Shareholder[]
+  
+  // Directors
+  directors         Director[]
+  
+  // Summary Document
+  summaryDocument   String?       @db.Text
+  
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Shareholder {
+  id              String      @id @default(cuid())
+  ptFormationId   String
+  ptFormation     PTFormation @relation(fields: [ptFormationId], references: [id], onDelete: Cascade)
+  
+  fullName        String
+  idNumber        String      // NIK or Passport
+  sharePercentage Float
+  
+  @@index([ptFormationId])
+}
+
+model Director {
+  id              String      @id @default(cuid())
+  ptFormationId   String
+  ptFormation     PTFormation @relation(fields: [ptFormationId], references: [id], onDelete: Cascade)
+  
+  fullName        String
+  
+  @@index([ptFormationId])
+}
+
+enum FormationStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+

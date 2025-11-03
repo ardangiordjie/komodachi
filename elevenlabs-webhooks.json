@@ -1,0 +1,51 @@
+{
+  "project": "Komodachi AI Notary Assistant",
+  "agent_id": "agent_8701k93aecrefc7v4zm4t2dfbaet",
+  "production_url": "https://komodachi-augi.vercel.app",
+  "webhooks": {
+    "call_start": {
+      "url": "https://komodachi-augi.vercel.app/api/elevenlabs/webhook/call-start",
+      "method": "POST",
+      "description": "Triggered when a call is initiated",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "call_end": {
+      "url": "https://komodachi-augi.vercel.app/api/elevenlabs/webhook/call-end",
+      "method": "POST",
+      "description": "Triggered when a call ends - saves all data to database",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "message": {
+      "url": "https://komodachi-augi.vercel.app/api/elevenlabs/webhook/message",
+      "method": "POST",
+      "description": "Triggered for real-time message updates during call",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  },
+  "configuration_steps": [
+    "1. Go to https://elevenlabs.io/app/conversational-ai",
+    "2. Find agent: Komodachi (agent_8701k93aecrefc7v4zm4t2dfbaet)",
+    "3. Click Settings/Edit",
+    "4. Navigate to Webhooks section",
+    "5. Add the three webhook URLs listed above",
+    "6. Save agent configuration",
+    "7. Test by making a call"
+  ],
+  "notes": {
+    "security": "Webhooks are secured with WEBHOOK_SECRET environment variable",
+    "testing": "Use cURL commands below to test webhooks manually",
+    "monitoring": "Check Vercel logs to see webhook calls in real-time"
+  },
+  "test_commands": {
+    "test_call_start": "curl -X POST https://komodachi-augi.vercel.app/api/elevenlabs/webhook/call-start -H 'Content-Type: application/json' -d '{\"call_id\": \"test_123\", \"agent_id\": \"agent_8701k93aecrefc7v4zm4t2dfbaet\"}'",
+    "test_call_end": "curl -X POST https://komodachi-augi.vercel.app/api/elevenlabs/webhook/call-end -H 'Content-Type: application/json' -d '{\"call_id\": \"test_123\", \"duration\": 300, \"analysis\": {\"companyName\": \"PT Test\", \"registeredCapital\": 1000000000}}'",
+    "check_deployment": "curl -I https://komodachi-augi.vercel.app"
+  }
+}
+
