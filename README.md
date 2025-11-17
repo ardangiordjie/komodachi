@@ -1,8 +1,11 @@
-# Komodachi - Voice AI Notary Assistant 🤖
+# Komodachi - Voice AI Notary Assistant 🕵️‍♂️
 
 ![Komodachi Banner](https://img.shields.io/badge/ElevenLabs-Powered-blueviolet) ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
 
 Voice AI assistant that handles notary intake for Indonesian PT (company) formation. 
+
+## Name Origin:
+"Komodachi" blends Komodo Dragon (Indonesia's iconic, resilient animal) and "Tomodachi" (the Japanese word for 'friend'), symbolizing a trusted AI assistant that helps navigate complex business formation with strength and reliability, while being friendly and supportive.
 
 ## 🎯 Features
 
