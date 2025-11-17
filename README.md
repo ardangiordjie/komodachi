@@ -2,7 +2,7 @@
 
 ![Komodachi Banner](https://img.shields.io/badge/ElevenLabs-Powered-blueviolet) ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
 
-Voice AI assistant that handles notary intake for Indonesian PT (company) formation. Built for **Augi Nugroho**, powered by **ElevenLabs Conversational AI**.
+Voice AI assistant that handles notary intake for Indonesian PT (company) formation. 
 
 ## 🎯 Features
 
