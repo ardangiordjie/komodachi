@@ -4,7 +4,7 @@
 
 Voice AI assistant that handles notary intake for Indonesian PT (company) formation. 
 
-## Name Origin:
+## 🐲🤝 Name Origin
 "Komodachi" blends Komodo Dragon (Indonesia's iconic, resilient animal) and "Tomodachi" (the Japanese word for 'friend'), symbolizing a trusted AI assistant that helps navigate complex business formation with strength and reliability, while being friendly and supportive.
 
 ## 🎯 Features
